@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Feliz Aniversário, Heldreth Pierre 🤍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#2F4156;--teal:#567C8D;--sky:#C8D9E6;--beige:#F5EFEB;--white:#FFFFFF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--beige);font-family:'DM Sans',sans-serif;color:var(--navy);overflow-x:hidden;cursor:none;}
+
+.cursor-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;position:fixed;top:0;left:0;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
+.cursor-ring{width:36px;height:36px;border:1.5px solid var(--teal);border-radius:50%;position:fixed;top:0;left:0;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s;pointer-events:none;z-index:9998;opacity:.5;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--beige);}::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px;}
+#stardust{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.35;}
+
+/* HERO */
+.hero{min-height:100svh;background:linear-gradient(165deg,var(--navy) 0%,#3a5f72 45%,var(--teal) 80%,var(--sky) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(200,217,230,.13) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);animation:glowPulse 6s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08);}}
+.hero-eyebrow{font-weight:300;font-size:clamp(.6rem,2vw,.75rem);letter-spacing:.5em;text-transform:uppercase;color:var(--sky);opacity:.8;margin-bottom:1.5rem;animation:riseIn 1.4s .2s cubic-bezier(.16,1,.3,1) both;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3.5rem,14vw,10rem);line-height:.88;color:var(--white);letter-spacing:-.03em;animation:riseIn 1.4s .4s cubic-bezier(.16,1,.3,1) both;}
+.hero-name em{font-style:italic;color:var(--sky);}
+.hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,3vw,1.6rem);color:rgba(245,239,235,.75);margin-top:1.2rem;animation:riseIn 1.4s .6s cubic-bezier(.16,1,.3,1) both;}
+.hero-years{margin-top:2.5rem;display:flex;align-items:center;gap:1rem;animation:riseIn 1.4s .8s cubic-bezier(.16,1,.3,1) both;}
+.hero-years-num{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,12vw,7rem);font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(200,217,230,.6);}
+.hero-years-text{text-align:left;font-size:clamp(.65rem,1.8vw,.8rem);letter-spacing:.25em;text-transform:uppercase;color:rgba(200,217,230,.7);}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:riseIn 1.8s 1.4s ease both;}
+.scroll-cue span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(200,217,230,.5);}
+.scroll-cue-line{width:1px;height:50px;background:linear-gradient(to bottom,transparent,rgba(200,217,230,.5));animation:lineDown 2s ease-in-out infinite;}
+@keyframes lineDown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+@keyframes riseIn{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+/* COUNTER */
+.counter{background:var(--white);padding:4rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.counter::before{content:'3';position:absolute;font-family:'Cormorant Garamond',serif;font-size:35vw;font-weight:300;color:var(--sky);opacity:.07;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1;}
+.counter-row{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+.counter-item{display:flex;flex-direction:column;align-items:center;}
+.counter-num{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3.5rem,11vw,6.5rem);color:var(--teal);line-height:1;}
+.counter-lbl{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--navy);opacity:.5;margin-top:.3rem;}
+.counter-sep{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--sky);opacity:.6;padding-bottom:1.2rem;}
+
+/* QUOTE BLOCKS */
+.quote-block{padding:clamp(3rem,8vw,7rem) 2rem;text-align:center;position:relative;overflow:hidden;}
+.quote-block.dark{background:var(--navy);}
+.quote-block.light{background:var(--white);}
+.quote-block.teal-bg{background:var(--teal);}
+.qb-big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(2rem,7vw,5.5rem);line-height:1.05;max-width:900px;margin:0 auto;}
+.quote-block.dark .qb-big{color:var(--white);}
+.quote-block.light .qb-big{color:var(--navy);}
+.quote-block.teal-bg .qb-big{color:var(--white);}
+.qb-sub{font-size:clamp(.7rem,2vw,.85rem);letter-spacing:.35em;text-transform:uppercase;margin-top:1.5rem;opacity:.5;}
+.quote-block.dark .qb-sub{color:var(--sky);}
+.quote-block.light .qb-sub{color:var(--teal);}
+.quote-block.teal-bg .qb-sub{color:rgba(245,239,235,.8);}
+.qb-deco{position:absolute;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,25vw,18rem);font-style:italic;opacity:.04;line-height:1;pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;}
+.quote-block.dark .qb-deco{color:var(--white);}
+
+/* PHOTO FULL BLEED */
+.photo-full{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;position:relative;overflow:hidden;}
+@media(max-width:700px){.photo-full{grid-template-columns:1fr;min-height:auto;}}
+.photo-full-img{position:relative;overflow:hidden;min-height:50vw;}
+@media(max-width:700px){.photo-full-img{min-height:70vw;}}
+.photo-full-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 8s ease;}
+.photo-full:hover .photo-full-img img{transform:scale(1.04);}
+.photo-full-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(47,65,86,.2) 0%,transparent 60%);}
+.photo-full-text{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5rem);}
+.photo-full.reverse .photo-full-img{order:2;}
+.photo-full.reverse .photo-full-text{order:1;background:var(--teal);}
+.photo-full.beige .photo-full-text{background:var(--beige);}
+.pft-eyebrow{font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--sky);opacity:.8;margin-bottom:1rem;}
+.pft-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,6vw,4rem);line-height:1;color:var(--white);margin-bottom:1.2rem;}
+.photo-full.beige .pft-title{color:var(--navy);}
+.photo-full.beige .pft-eyebrow{color:var(--teal);}
+.pft-title em{font-style:italic;}
+.pft-body{font-size:clamp(.85rem,2vw,1rem);font-weight:300;line-height:1.85;color:rgba(255,255,255,.8);}
+.photo-full.beige .pft-body{color:rgba(47,65,86,.75);}
+.pft-heart{font-size:1.8rem;margin-top:1.5rem;display:block;animation:heartbeat 2.5s ease infinite;}
+
+/* MOSAIC */
+.mosaic{padding:1rem;background:var(--beige);display:grid;gap:.6rem;}
+.mosaic-3{grid-template-columns:2fr 1fr;grid-template-rows:auto auto;}
+.mosaic-2{grid-template-columns:1fr 1fr;}
+@media(max-width:500px){.mosaic-3,.mosaic-2{grid-template-columns:1fr;}}
+.mosaic-item{overflow:hidden;border-radius:2px;position:relative;cursor:pointer;}
+.mosaic-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.mosaic-item:hover img{transform:scale(1.06);}
+.mosaic-item.tall{aspect-ratio:3/4;grid-row:span 2;}
+.mosaic-item.wide{aspect-ratio:16/9;}
+.mosaic-item.sq{aspect-ratio:1;}
+@media(max-width:500px){.mosaic-item.tall,.mosaic-item.sq{aspect-ratio:4/3;grid-row:span 1;}}
+.mosaic-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(47,65,86,.4) 0%,transparent 50%);opacity:0;transition:opacity .4s;}
+.mosaic-item:hover::after{opacity:1;}
+
+/* STRIP 4 */
+.strip4{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;padding:0 1rem 1rem;}
+@media(max-width:600px){.strip4{grid-template-columns:repeat(2,1fr);}}
+.strip4-item{aspect-ratio:3/4;overflow:hidden;border-radius:2px;cursor:pointer;position:relative;}
+.strip4-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.strip4-item:hover img{transform:scale(1.08);}
+
+/* LETTER */
+.letter{padding:clamp(4rem,10vw,9rem) clamp(1.5rem,6vw,3rem);background:var(--beige);position:relative;overflow:hidden;}
+.letter-inner{max-width:700px;margin:0 auto;}
+.letter-header{text-align:center;margin-bottom:4rem;}
+.letter-eyebrow{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
+.letter-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,8vw,5rem);color:var(--navy);line-height:.95;}
+.letter-title em{font-style:italic;color:var(--teal);}
+.letter-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0;}
+.letter-divider::before,.letter-divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(86,124,141,.3),transparent);}
+.letter-divider-icon{color:var(--teal);font-size:.9rem;flex-shrink:0;}
+.letter-para{font-size:clamp(.9rem,2.5vw,1.05rem);font-weight:300;line-height:2;color:var(--navy);margin-bottom:1.8rem;opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease;}
+.letter-para.vis{opacity:1;transform:translateY(0);}
+.letter-highlight{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,4vw,2rem);color:var(--teal);display:block;text-align:center;margin:2.5rem 0;line-height:1.3;opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease;}
+.letter-highlight.vis{opacity:1;transform:translateY(0);}
+.trio-block{display:flex;flex-direction:column;align-items:center;gap:.3rem;margin:2.5rem 0;opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease;}
+.trio-block.vis{opacity:1;transform:translateY(0);}
+.trio-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,3.5vw,1.7rem);color:var(--teal);line-height:1.2;}
+.trio-coda{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--navy);opacity:.5;margin-top:.6rem;}
+.letter-sig{text-align:right;margin-top:3rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,3vw,1.4rem);color:var(--teal);opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;}
+.letter-sig.vis{opacity:1;transform:translateY(0);}
+
+/* FINAL */
+.final{min-height:100svh;background:linear-gradient(165deg,var(--navy) 0%,#3a5f72 50%,var(--teal) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;position:relative;overflow:hidden;}
+.final-rings{position:absolute;inset:0;pointer-events:none;}
+.final-rings span{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(200,217,230,.12);transform:translate(-50%,-50%);animation:ringExpand 6s ease-out infinite;}
+.final-rings span:nth-child(1){width:20vmax;height:20vmax;animation-delay:0s;}
+.final-rings span:nth-child(2){width:40vmax;height:40vmax;animation-delay:1.5s;}
+.final-rings span:nth-child(3){width:60vmax;height:60vmax;animation-delay:3s;}
+.final-rings span:nth-child(4){width:80vmax;height:80vmax;animation-delay:4.5s;}
+@keyframes ringExpand{0%{opacity:.7;transform:translate(-50%,-50%) scale(.8);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.2);}}
+.final-label{font-size:.65rem;letter-spacing:.5em;text-transform:uppercase;color:var(--sky);opacity:.7;margin-bottom:1.5rem;}
+.final-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,14vw,9rem);line-height:.88;color:var(--white);letter-spacing:-.02em;}
+.final-name em{font-style:italic;color:var(--sky);}
+.final-heart{font-size:clamp(2rem,7vw,4rem);margin:1.5rem 0;display:block;animation:heartbeat 2s ease infinite;}
+.final-msg{font-size:clamp(.75rem,2vw,.9rem);letter-spacing:.25em;text-transform:uppercase;color:rgba(200,217,230,.6);}
+.final-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,3vw,1.4rem);color:rgba(245,239,235,.6);margin-top:1rem;}
+@keyframes heartbeat{0%,100%{transform:scale(1);}15%{transform:scale(1.18);}30%{transform:scale(1);}45%{transform:scale(1.1);}60%{transform:scale(1);}}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(8,12,18,.97);align-items:center;justify-content:center;padding:1rem;}
+.lb.on{display:flex;}
+.lb img{max-width:min(88vw,1000px);max-height:90vh;object-fit:contain;border-radius:3px;animation:lbPop .3s cubic-bezier(.16,1,.3,1);}
+@keyframes lbPop{from{opacity:0;transform:scale(.92);}to{opacity:1;transform:scale(1);}}
+.lb-close{position:absolute;top:1.2rem;right:1.5rem;color:#fff;font-size:2.2rem;cursor:pointer;opacity:.6;transition:opacity .2s;line-height:1;}
+.lb-close:hover{opacity:1;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;padding:.8rem 1.2rem;opacity:.4;transition:opacity .2s;user-select:none;line-height:1;}
+.lb-nav:hover{opacity:1;}
+.lb-prev{left:0;}.lb-next{right:0;}
+
+/* FADE UTILS */
+.fi{opacity:0;transform:translateY(35px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.fi.vis{opacity:1;transform:translateY(0);}
+.fi-left{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.fi-left.vis{opacity:1;transform:translateX(0);}
+.fi-right{opacity:0;transform:translateX(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.fi-right.vis{opacity:1;transform:translateX(0);}
+@media(max-width:500px){.photo-full.reverse .photo-full-img{order:0;}.photo-full.reverse .photo-full-text{order:1;}}
+</style>
+</head>
+<body>
+
+<canvas id="stardust"></canvas>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <p class="hero-eyebrow">Uma história de amor · 2023 – 2026</p>
+  <h1 class="hero-name">Feliz<br><em>Aniversário</em></h1>
+  <p class="hero-tag">Heldreth Pierre & Gladys Amélia</p>
+  <div class="hero-years">
+    <span class="hero-years-num">3</span>
+    <span class="hero-years-text">Anos<br>de nós</span>
+  </div>
+  <div class="scroll-cue"><div class="scroll-cue-line"></div><span>descobrir</span></div>
+</section>
+
+<!-- COUNTER -->
+<section class="counter">
+  <div class="counter-row fi">
+    <div class="counter-item"><span class="counter-num">3</span><span class="counter-lbl">Anos</span></div>
+    <span class="counter-sep">·</span>
+    <div class="counter-item"><span class="counter-num" id="cntM">—</span><span class="counter-lbl">Meses</span></div>
+    <span class="counter-sep">·</span>
+    <div class="counter-item"><span class="counter-num" id="cntD">—</span><span class="counter-lbl">Dias</span></div>
+  </div>
+</section>
+
+<!-- QUOTE 1 -->
+<section class="quote-block dark">
+  <div class="qb-deco">"</div>
+  <p class="qb-big fi">"Tudo começou de uma forma tão simples… e de repente já não conseguia imaginar o mundo sem ti."</p>
+  <p class="qb-sub fi">— O início de tudo</p>
+</section>
+
+<!-- FOTO 1 full bleed -->
+<div class="photo-full fi-left">
+  <div class="photo-full-img"><img src="images/photo1.jpg" alt="Memória 1" loading="lazy"></div>
+  <div class="photo-full-text">
+    <p class="pft-eyebrow">2023 · O início</p>
+    <h2 class="pft-title">Quando tudo<br><em>começou</em></h2>
+    <p class="pft-body">Depois do aniversário na tua igreja, as conversas nunca mais pararam. Chamadas que duravam horas, risos que não tinham fim. Aquele início simples tornou-se numa das coisas mais bonitas da minha vida.</p>
+    <span class="pft-heart">🤍</span>
+  </div>
+</div>
+
+<!-- MOSAIC 1: fotos 2-4 -->
+<div class="mosaic mosaic-3 fi">
+  <div class="mosaic-item tall" data-idx="1"><img src="images/photo2.jpg" alt="Memória 2" loading="lazy"></div>
+  <div class="mosaic-item sq" data-idx="2"><img src="images/photo3.jpg" alt="Memória 3" loading="lazy"></div>
+  <div class="mosaic-item sq" data-idx="3"><img src="images/photo4.jpg" alt="Memória 4" loading="lazy"></div>
+</div>
+
+<!-- QUOTE 2 -->
+<section class="quote-block light">
+  <p class="qb-big fi" style="color:var(--teal);font-size:clamp(1.5rem,5vw,3.5rem);">Patrão e Patroa</p>
+  <p class="qb-sub fi" style="color:var(--navy);">Como carinhosamente nos apelidamos 🤍</p>
+</section>
+
+<!-- FOTO 5 reverse -->
+<div class="photo-full reverse fi-right">
+  <div class="photo-full-img"><img src="images/photo5.jpg" alt="Memória 5" loading="lazy"></div>
+  <div class="photo-full-text">
+    <p class="pft-eyebrow">Cada momento · conta</p>
+    <h2 class="pft-title">Tu tornaste-te<br><em>presença</em></h2>
+    <p class="pft-body">Aquelas pessoas que entram na nossa vida e deixam marcas tão profundas que já não conseguimos imaginar como era viver antes delas. Tu és essa pessoa para mim.</p>
+    <span class="pft-heart">🤍</span>
+  </div>
+</div>
+
+<!-- STRIP: fotos 6-9 -->
+<div class="strip4 fi">
+  <div class="strip4-item" data-idx="5"><img src="images/photo6.jpg" alt="Memória 6" loading="lazy"></div>
+  <div class="strip4-item" data-idx="6"><img src="images/photo7.jpg" alt="Memória 7" loading="lazy"></div>
+  <div class="strip4-item" data-idx="7"><img src="images/photo8.jpg" alt="Memória 8" loading="lazy"></div>
+  <div class="strip4-item" data-idx="8"><img src="images/photo9.jpg" alt="Memória 9" loading="lazy"></div>
+</div>
+
+<!-- QUOTE 3 -->
+<section class="quote-block teal-bg">
+  <div class="qb-deco" style="opacity:.06;">casa</div>
+  <p class="qb-big fi">"Tu tornaste-te casa."</p>
+  <p class="qb-sub fi">Não um lugar físico — mas aquele sentimento de conforto, paz e pertencimento</p>
+</section>
+
+<!-- FOTO 10 beige -->
+<div class="photo-full beige fi-left">
+  <div class="photo-full-img"><img src="images/photo10.jpg" alt="Memória 10" loading="lazy"></div>
+  <div class="photo-full-text">
+    <p class="pft-eyebrow">O que sinto · por ti</p>
+    <h2 class="pft-title" style="color:var(--navy);">O teu<br><em>coração</em></h2>
+    <p class="pft-body" style="color:rgba(47,65,86,.7);">Admiro o teu esforço, os teus sonhos, a tua dedicação. Admiro até o teu coração — porque mesmo quando tentas parecer forte, eu sei o quanto sentes as coisas profundamente.</p>
+    <span class="pft-heart" style="color:var(--teal);">🤍</span>
+  </div>
+</div>
+
+<!-- MOSAIC 2: fotos 11-13 -->
+<div class="mosaic mosaic-3 fi">
+  <div class="mosaic-item tall" data-idx="10"><img src="images/photo11.jpg" alt="Memória 11" loading="lazy"></div>
+  <div class="mosaic-item sq" data-idx="11"><img src="images/photo12.jpg" alt="Memória 12" loading="lazy"></div>
+  <div class="mosaic-item sq" data-idx="12"><img src="images/photo13.jpg" alt="Memória 13" loading="lazy"></div>
+</div>
+
+<!-- LETTER -->
+<section class="letter">
+  <div class="letter-inner">
+    <div class="letter-header fi">
+      <span class="letter-eyebrow">Para ti, Heldreth</span>
+      <h2 class="letter-title">Uma <em>carta</em><br>do coração</h2>
+    </div>
+    <div class="letter-divider fi"><span class="letter-divider-icon">♡</span></div>
+    <p class="letter-para">3 anos de nós. 🤍</p>
+    <p class="letter-para">Engraçado pensar que a nossa história começou de uma forma tão simples... Já tínhamos falado antes, mas tudo realmente começou a crescer em 2023, depois do aniversário na tua igreja. Conversámos mais, aproximámo-nos aos poucos, vieram as chamadas frequentes, os momentos juntos, os dias em que ias buscar-me à escola, as conversas que nunca acabavam… até que, sem nos apercebermos, já existia algo muito forte entre nós. E desde então, o que sentimos só continuou a crescer.</p>
+    <span class="letter-highlight">Patrão e Patroa — Como carinhosamente nos apelidamos</span>
+    <p class="letter-para">Hoje, a olhar para tudo o que vivemos, percebo que te tornaste muito mais do que apenas um namorado para mim. Tornaste-te presença. Aquelas pessoas que entram na nossa vida e deixam marcas tão profundas que já não conseguimos imaginar como era viver antes delas.</p>
+    <p class="letter-para">Estiveste comigo em tantas fases, tantos momentos, tantos pensamentos que talvez nem saibas o quanto significaram para mim. Houve dias em que estive confusa, cansada, emocionalmente perdida — e mesmo assim continuaste ali, e eu continuei a escolher-te. E talvez seja isso que mais amo em nós.</p>
+    <div class="trio-block">
+      <span class="trio-line">Nós crescemos juntos.</span>
+      <span class="trio-line">Aprendemos juntos.</span>
+      <span class="trio-line">Errámos juntos.</span>
+      <span class="trio-coda">E continuamos aqui.</span>
+    </div>
+    <p class="letter-para">Porque o nosso amor nunca foi sobre perfeição. Nunca foi sobre viver uma relação sem problemas, sem falhas ou sem momentos difíceis — até porque já tivemos inseguranças, orgulho, silêncio, momentos em que parecia difícil entender o outro… mas mesmo assim continuámos a escolher ficar.</p>
+    <p class="letter-para">Fizeste-me sentir amada de uma forma que nem consigo explicar completamente. Fizeste-me sentir importante, desejada, cuidada. E talvez nunca percebas o quanto certas pequenas atitudes tuas ficaram guardadas dentro de mim. Os detalhes, as preocupações, os momentos simples… tudo isso construiu um espaço teu no meu coração que ninguém consegue ocupar.</p>
+    <p class="letter-para">Admiro o teu esforço, os teus sonhos, a tua dedicação, a forma como tentas crescer e construir coisas para o teu futuro. Admiro até o teu coração — porque mesmo quando tentas parecer forte, sei o quanto sentes as coisas profundamente.</p>
+    <p class="letter-para">Às vezes olho para nós e percebo que o tempo passou tão depressa… mas ao mesmo tempo parece que já fazes parte da minha vida há muito mais do que 3 anos.</p>
+    <span class="letter-highlight">Tu tornaste-te casa.</span>
+    <p class="letter-para">Não um lugar físico, mas aquele sentimento de conforto, paz e pertencimento que encontramos em poucas pessoas durante a vida.</p>
+    <p class="letter-para">Obrigada por cada abraço, cada conversa, cada esforço, cada momento em que me escolheste mesmo quando era mais fácil desistir. Obrigada por cada vez que tentaste compreender-me, cuidar de mim e permanecer.</p>
+    <p class="letter-para">E acima de tudo… obrigada por existires na minha vida da forma tão única que existes.</p>
+    <p class="letter-para">Se hoje pudesse pedir alguma coisa para o futuro, seria apenas isto: que independentemente do que a vida nos traga, nunca percamos esta conexão tão nossa.</p>
+    <p class="letter-para">Porque amo a nossa história.<br>Amo quem somos juntos.<br>E amo-te a ti. 🤍</p>
+    <div class="letter-divider fi"><span class="letter-divider-icon">♡</span></div>
+    <p class="letter-sig">Com todo o amor do mundo 🤍</p>
+    <p class="letter-sig">Gladys Amélia · Patroa 🤍</p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="final-rings"><span></span><span></span><span></span><span></span></div>
+  <p class="final-label fi">Para sempre no meu coração</p>
+  <h2 class="final-name fi">Heldreth<br><em>Pierre</em></h2>
+  <span class="final-heart">🤍</span>
+  <p class="final-msg fi">Feliz Aniversário · 3 anos juntos</p>
+  <p class="final-sub fi">"Amo-te a ti."</p>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <span class="lb-close" id="lbX">×</span>
+  <span class="lb-nav lb-prev" id="lbP">‹</span>
+  <img src="" id="lbI" alt="">
+  <span class="lb-nav lb-next" id="lbN">›</span>
+</div>
+
+<script>
+const allImgs = [
+  'images/photo1.jpg','images/photo2.jpg','images/photo3.jpg','images/photo4.jpg',
+  'images/photo5.jpg','images/photo6.jpg','images/photo7.jpg','images/photo8.jpg',
+  'images/photo9.jpg','images/photo10.jpg','images/photo11.jpg','images/photo12.jpg',
+  'images/photo13.jpg'
+];
+
+// CURSOR
+const dot=document.getElementById('dot'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+
+// STARS
+const canvas=document.getElementById('stardust'),ctx=canvas.getContext('2d');
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resizeCanvas();window.addEventListener('resize',resizeCanvas);
+let stars=[];
+function initStars(){stars=[];for(let i=0;i<90;i++)stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+.3,o:Math.random(),s:Math.random()*.003+.001,d:Math.random()>.5?1:-1});}
+initStars();
+function drawStars(){ctx.clearRect(0,0,canvas.width,canvas.height);stars.forEach(s=>{s.o+=s.s*s.d;if(s.o>1||s.o<0)s.d*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(86,124,141,${s.o})`;ctx.fill();});requestAnimationFrame(drawStars);}
+drawStars();
+
+// COUNTER
+const start=new Date('2023-05-18'),now=new Date();
+const totalDays=Math.floor((now-start)/(1000*60*60*24));
+document.getElementById('cntM').textContent=Math.floor(totalDays/30.44);
+document.getElementById('cntD').textContent=totalDays;
+
+// LIGHTBOX
+const lb=document.getElementById('lb'),lbI=document.getElementById('lbI');
+let lbIdx=0;
+function openLB(idx){lbIdx=idx;lbI.src=allImgs[idx];lb.classList.add('on');document.body.style.overflow='hidden';}
+function closeLB(){lb.classList.remove('on');document.body.style.overflow='';}
+document.getElementById('lbX').onclick=closeLB;
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+document.getElementById('lbP').onclick=()=>{lbIdx=(lbIdx-1+allImgs.length)%allImgs.length;lbI.src=allImgs[lbIdx];};
+document.getElementById('lbN').onclick=()=>{lbIdx=(lbIdx+1)%allImgs.length;lbI.src=allImgs[lbIdx];};
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')document.getElementById('lbP').click();if(e.key==='ArrowRight')document.getElementById('lbN').click();});
+
+// Clickable photo areas
+document.querySelectorAll('.mosaic-item,.strip4-item').forEach(el=>{
+  el.addEventListener('click',()=>openLB(parseInt(el.dataset.idx)));
+});
+document.querySelectorAll('.photo-full-img').forEach((el,i)=>{
+  const map=[0,4,9];
+  el.style.cursor='pointer';
+  el.addEventListener('click',()=>openLB(map[i]||0));
+});
+
+// SCROLL ANIMATIONS
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
+document.querySelectorAll('.fi,.fi-left,.fi-right,.letter-para,.letter-highlight,.trio-block,.letter-sig').forEach(el=>obs.observe(el));
+document.querySelectorAll('.letter-para').forEach((p,i)=>{p.style.transitionDelay=(i*.07)+'s';});
+</script>
+</body>
+</html>
